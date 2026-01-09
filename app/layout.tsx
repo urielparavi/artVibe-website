@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     locale: "he_IL",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://artvibe-website.netlify.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "ArtVibe - דוד כהן אמן ציורי שמן ואקוורל",
