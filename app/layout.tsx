@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "דוד כהן - אמן",
     description: "גלו את עולם האמנות של דוד כהן. ציורים מקוריים והזמנות מותאמות אישית.",
     type: "website",
-    url: "https://artvibe.co.il",
+    url: "https://artvibe-website.netlify.app",
     locale: "he_IL",
     images: [
       {
