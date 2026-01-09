@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import { Palette, Sparkles, Award, Users } from "lucide-react";
+import { SparklesHeroIcon, PaletteHeroIcon, AwardHeroIcon, UsersHeroIcon } from "./Icons";
 
 export const Hero = () => {
   return (
@@ -36,13 +36,13 @@ export const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8">
             {/* Badge */}
-            <Badge className="w-fit text-sm px-4 py-2 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20">
-              <Sparkles className="w-4 h-4 ml-2" />
-              אמן מקצועי עם 15+ שנות ניסיון
+            <Badge className="w-fit text-sm px-4 py-2 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 animate-fade-in-up">
+              <SparklesHeroIcon />
+              <span className="mr-2">אמן מקצועי עם 15+ שנות ניסיון</span>
             </Badge>
 
             {/* Main Heading */}
-            <div className="space-y-4">
+            <div className="space-y-4 animate-fade-in-up-delay-1">
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
                 <span className="block bg-gradient-to-l from-primary via-orange-400 to-amber-300 text-transparent bg-clip-text animate-gradient bg-[length:200%_auto]">
                   יצירות אמנות
@@ -61,7 +61,7 @@ export const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up-delay-2">
               <Link href="/gallery" className="group">
                 <Button size="lg" className="w-full sm:w-auto text-lg px-8 py-6 relative overflow-hidden">
                   <span className="relative z-10">גלריית העבודות</span>
@@ -76,7 +76,7 @@ export const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border/50">
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border/50 animate-fade-in-up-delay-3">
               <div className="space-y-1">
                 <p className="text-3xl font-bold text-primary">500+</p>
                 <p className="text-sm text-muted-foreground">יצירות מקוריות</p>
@@ -96,10 +96,10 @@ export const Hero = () => {
           <div className="relative">
             <div className="grid grid-cols-2 gap-6">
               {/* Card 1 */}
-              <div className="col-span-2 bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:scale-105 transition-all duration-300 animate-rotate-in-1">
+              <div className="col-span-2 bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:scale-105 transition-all duration-500 animate-rotate-in-1">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/20 rounded-xl">
-                    <Palette className="w-8 h-8 text-primary" />
+                    <PaletteHeroIcon />
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold">טכניקות מגוונות</h3>
@@ -111,10 +111,10 @@ export const Hero = () => {
               </div>
 
               {/* Card 2 */}
-              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:scale-105 transition-all duration-700 animate-rotate-in-2">
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:scale-105 transition-all duration-500 animate-rotate-in-2">
                 <div className="space-y-3">
                   <div className="p-3 bg-primary/10 rounded-xl w-fit">
-                    <Award className="w-6 h-6 text-primary" />
+                    <AwardHeroIcon />
                   </div>
                   <h3 className="text-xl font-bold">איכות פרימיום</h3>
                   <p className="text-sm text-muted-foreground">
@@ -124,10 +124,10 @@ export const Hero = () => {
               </div>
 
               {/* Card 3 */}
-              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:scale-105 transition-all duration-300 animate-rotate-in-3">
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:scale-105 transition-all duration-500 animate-rotate-in-3">
                 <div className="space-y-3">
                   <div className="p-3 bg-primary/10 rounded-xl w-fit">
-                    <Users className="w-6 h-6 text-primary" />
+                    <UsersHeroIcon />
                   </div>
                   <h3 className="text-xl font-bold">ליווי אישי</h3>
                   <p className="text-sm text-muted-foreground">
@@ -137,7 +137,7 @@ export const Hero = () => {
               </div>
 
               {/* Testimonial Card */}
-              <div className="col-span-2 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:scale-105 transition-all duration-300 animate-rotate-in-4">
+              <div className="col-span-2 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:scale-105 transition-all duration-500 animate-rotate-in-4">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center text-xl font-bold">
                     ר

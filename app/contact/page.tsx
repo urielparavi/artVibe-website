@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { FadeIn } from "@/components/FadeIn";
 import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
 
 export default function ContactPage() {
@@ -89,36 +90,42 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="container py-24 sm:py-32">
         <div className="text-center space-y-6 max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold">
-            <span className="bg-gradient-to-r from-[#D4A574] to-[#8B5A2B] text-transparent bg-clip-text">
-              צרו קשר
-            </span>
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            אשמח לשמוע מכם! בין אם יש לכם שאלה, רעיון ליצירה או סתם רוצים לשוחח על אמנות.
-          </p>
+          <FadeIn direction="up">
+            <h1 className="text-4xl md:text-5xl font-bold">
+              <span className="bg-gradient-to-r from-[#D4A574] to-[#8B5A2B] text-transparent bg-clip-text">
+                צרו קשר
+              </span>
+            </h1>
+          </FadeIn>
+          <FadeIn direction="up" delay={100}>
+            <p className="text-xl text-muted-foreground">
+              אשמח לשמוע מכם! בין אם יש לכם שאלה, רעיון ליצירה או סתם רוצים לשוחח על אמנות.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Contact Info Cards */}
       <section className="container pb-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {contactInfo.map((info) => (
-            <Card key={info.title}>
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
-                  {info.icon}
-                </div>
-                <h3 className="font-bold mb-2">{info.title}</h3>
-                {info.link ? (
-                  <a href={info.link} className="text-muted-foreground hover:text-primary transition-colors">
-                    {info.content}
-                  </a>
-                ) : (
-                  <p className="text-muted-foreground">{info.content}</p>
-                )}
-              </CardContent>
-            </Card>
+          {contactInfo.map((info, index) => (
+            <FadeIn key={info.title} direction="up" delay={index * 100}>
+              <Card>
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+                    {info.icon}
+                  </div>
+                  <h3 className="font-bold mb-2">{info.title}</h3>
+                  {info.link ? (
+                    <a href={info.link} className="text-muted-foreground hover:text-primary transition-colors">
+                      {info.content}
+                    </a>
+                  ) : (
+                    <p className="text-muted-foreground">{info.content}</p>
+                  )}
+                </CardContent>
+              </Card>
+            </FadeIn>
           ))}
         </div>
       </section>
@@ -127,7 +134,8 @@ export default function ContactPage() {
       <section className="container pb-24 sm:pb-32">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Form */}
-          <Card>
+          <FadeIn direction="right">
+            <Card>
             <CardHeader>
               <CardTitle>שלחו הודעה</CardTitle>
               <CardDescription>
@@ -210,9 +218,11 @@ export default function ContactPage() {
               </form>
             </CardContent>
           </Card>
+          </FadeIn>
 
           {/* Side Info */}
-          <div className="space-y-8">
+          <FadeIn direction="left">
+            <div className="space-y-8">
             {/* Social Links */}
             <Card>
               <CardHeader>
@@ -237,7 +247,7 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            {/* Map Placeholder */}
+            {/* Google Maps */}
             <Card>
               <CardHeader>
                 <CardTitle>מיקום הסטודיו</CardTitle>
@@ -246,8 +256,16 @@ export default function ContactPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="h-48 bg-gradient-to-br from-primary/10 to-primary/30 rounded-lg flex items-center justify-center">
-                  <MapPin className="h-12 w-12 text-primary/50" />
+                <div className="h-64 rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.5958621589194!2d35.20827631519088!3d31.78085938129547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1502d7b8b5f8e9e9%3A0x9f8c8c8c8c8c8c8c!2sBezalel%20Academy%20of%20Arts%20and%20Design!5e0!3m2!1sen!2sil!4v1234567890123!5m2!1sen!2sil"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
                   הסטודיו ממוקם בלב ירושלים, קרוב לאקדמיה בצלאל.
@@ -256,25 +274,30 @@ export default function ContactPage() {
               </CardContent>
             </Card>
           </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="bg-muted/50 py-24 sm:py-32">
         <div className="container">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-              שאלות נפוצות
-            </span>
-          </h2>
+          <FadeIn direction="up">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+                שאלות נפוצות
+              </span>
+            </h2>
+          </FadeIn>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {faq.map((item) => (
-              <Card key={item.question}>
-                <CardContent className="p-6">
-                  <h3 className="font-bold mb-2">{item.question}</h3>
-                  <p className="text-muted-foreground">{item.answer}</p>
-                </CardContent>
-              </Card>
+            {faq.map((item, index) => (
+              <FadeIn key={item.question} direction="up" delay={index * 100}>
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="font-bold mb-2">{item.question}</h3>
+                    <p className="text-muted-foreground">{item.answer}</p>
+                  </CardContent>
+                </Card>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -282,18 +305,24 @@ export default function ContactPage() {
 
       {/* Quick Contact CTA */}
       <section className="container py-24 sm:py-32 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          מעדיפים לדבר?
-        </h2>
-        <p className="text-xl text-muted-foreground mb-8">
-          התקשרו אליי ישירות ונקבע פגישה
-        </p>
-        <a href="tel:+972541234567">
-          <Button size="lg" className="gap-2">
-            <Phone className="h-5 w-5" />
-            054-1234567
-          </Button>
-        </a>
+        <FadeIn direction="up">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            מעדיפים לדבר?
+          </h2>
+        </FadeIn>
+        <FadeIn direction="up" delay={100}>
+          <p className="text-xl text-muted-foreground mb-8">
+            התקשרו אליי ישירות ונקבע פגישה
+          </p>
+        </FadeIn>
+        <FadeIn direction="up" delay={200}>
+          <a href="tel:+972541234567">
+            <Button size="lg" className="gap-2">
+              <Phone className="h-5 w-5" />
+              054-1234567
+            </Button>
+          </a>
+        </FadeIn>
       </section>
 
       <ScrollToTop />
