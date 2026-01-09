@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
+import { FadeIn } from "./FadeIn";
 
 interface ArtworkProps {
   title: string;
@@ -52,43 +55,51 @@ const artworks: ArtworkProps[] = [
 export const GalleryPreview = () => {
   return (
     <section className="container py-24 sm:py-32">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold">
-          <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-            הגלריה{" "}
-          </span>
-          שלי
-        </h2>
-        <p className="text-xl text-muted-foreground mt-4">
-          מבחר מיצירותיי האחרונות. לחצו לצפייה בגלריה המלאה.
-        </p>
-      </div>
+      <FadeIn direction="up">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+              הגלריה{" "}
+            </span>
+            שלי
+          </h2>
+          <p className="text-xl text-muted-foreground mt-4">
+            מבחר מיצירותיי האחרונות. לחצו לצפייה בגלריה המלאה.
+          </p>
+        </div>
+      </FadeIn>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {artworks.map((artwork) => (
-          <Card key={artwork.title} className="overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow">
-            <div className="h-48 relative overflow-hidden bg-muted">
-              <Image
-                src={artwork.image}
-                alt={artwork.title}
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-            <CardContent className="p-4">
-              <h3 className="font-bold text-lg">{artwork.title}</h3>
-              <p className="text-muted-foreground">{artwork.category}</p>
-              <p className="text-sm text-primary">{artwork.size}</p>
-            </CardContent>
-          </Card>
+        {artworks.map((artwork, index) => (
+          <FadeIn key={artwork.title} direction="up" delay={index * 100}>
+            <Card className="overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow h-full">
+              <div className="h-48 relative overflow-hidden bg-muted">
+                <Image
+                  src={artwork.image}
+                  alt={artwork.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg">{artwork.title}</h3>
+                <p className="text-muted-foreground">{artwork.category}</p>
+                <p className="text-sm text-primary">{artwork.size}</p>
+              </CardContent>
+            </Card>
+          </FadeIn>
         ))}
       </div>
 
-      <div className="text-center mt-12">
-        <Link href="/gallery">
-          <Button size="lg">צפו בגלריה המלאה</Button>
-        </Link>
-      </div>
+      <FadeIn direction="up" delay={200}>
+        <div className="text-center mt-12">
+          <Link href="/gallery">
+            <Button size="lg">צפו בגלריה המלאה</Button>
+          </Link>
+        </div>
+      </FadeIn>
     </section>
   );
 };

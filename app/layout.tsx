@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     title: "דוד כהן - אמן",
     description: "גלו את עולם האמנות של דוד כהן. ציורים מקוריים והזמנות מותאמות אישית.",
     type: "website",
+    url: "https://artvibe.co.il",
+    locale: "he_IL",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ArtVibe - דוד כהן אמן ציורי שמן ואקוורל",
+      },
+    ],
   },
 };
 

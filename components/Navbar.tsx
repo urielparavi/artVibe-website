@@ -58,10 +58,10 @@ export const Navbar = () => {
         {/* Logo - Right side in RTL */}
         <Link
           href="/"
-          className="font-bold text-xl flex items-center"
+          className="font-bold text-xl flex items-center group"
         >
           <LogoIcon />
-         ArtVibe
+          <span className="transition-colors duration-300 group-hover:text-primary">ArtVibe</span>
         </Link>
 
         {/* Desktop Navigation - Center */}
@@ -72,7 +72,7 @@ export const Navbar = () => {
               key={i}
               className={`text-[17px] ${buttonVariants({
                 variant: "ghost",
-              })} ${pathname === route.href ? "bg-accent" : ""}`}
+              })} ${pathname === route.href ? "text-primary font-semibold" : ""}`}
             >
               {route.label}
             </Link>
@@ -101,8 +101,9 @@ export const Navbar = () => {
 
             <SheetContent side="right">
               <SheetHeader>
-                <SheetTitle className="font-bold text-xl">
-                  דוד כהן - אמן
+                <SheetTitle className="font-bold text-xl flex items-center justify-center gap-2">
+                  <LogoIcon />
+                  ArtVibe
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col justify-center items-center gap-2 mt-4">
@@ -111,7 +112,7 @@ export const Navbar = () => {
                     key={label}
                     href={href}
                     onClick={() => setIsOpen(false)}
-                    className={buttonVariants({ variant: "ghost" })}
+                    className={`${buttonVariants({ variant: "ghost" })} ${pathname === href ? "text-primary font-semibold" : ""}`}
                   >
                     {label}
                   </Link>
