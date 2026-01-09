@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://artvibe.co.il';
+  const baseUrl = 'https://artvibe-website.netlify.app';
 
   return [
     {

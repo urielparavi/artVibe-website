@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://artvibe.co.il/sitemap.xml',
+    sitemap: 'https://artvibe-website.netlify.app/sitemap.xml',
   };
 }
