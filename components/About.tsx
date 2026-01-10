@@ -17,6 +17,7 @@ export const About = () => {
                   alt="אמן מצייר"
                   fill
                   className="object-cover"
+                  sizes="300px"
                 />
               </div>
             </FadeIn>

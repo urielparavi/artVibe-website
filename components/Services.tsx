@@ -126,6 +126,7 @@ export const Services = () => {
                 fill
                 className="object-cover"
                 priority={index === 0}
+                sizes="(max-width: 768px) 300px, (max-width: 1024px) 500px, 600px"
               />
             </div>
           ))}
