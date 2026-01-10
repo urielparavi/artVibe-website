@@ -126,11 +126,11 @@ export default function AboutPage() {
             <div className="flex justify-center">
               <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=800&fit=crop"
-                  alt="אמן צייר במלאכתו"
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=800&fit=crop&crop=faces&facepad=3"
+                  alt="דוד כהן - אמן"
                   width={320}
                   height={320}
-                  className="object-cover w-full h-full"
+                  className="object-cover object-top w-full h-full"
                   priority
                 />
               </div>

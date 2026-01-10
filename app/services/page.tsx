@@ -138,8 +138,8 @@ export default function ServicesPage() {
                     הכי פופולרי
                   </Badge>
                 )}
-                <CardHeader>
-                  <div className="mb-4 bg-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center">
+                <CardHeader className="text-center">
+                  <div className="mb-4 bg-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto">
                     {service.icon}
                   </div>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>

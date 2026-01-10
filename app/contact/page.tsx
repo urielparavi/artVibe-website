@@ -9,6 +9,12 @@ import { Badge } from "@/components/ui/badge";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { FadeIn } from "@/components/FadeIn";
 import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -288,18 +294,22 @@ export default function ContactPage() {
               </span>
             </h2>
           </FadeIn>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {faq.map((item, index) => (
-              <FadeIn key={item.question} direction="up" delay={index * 100}>
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="font-bold mb-2">{item.question}</h3>
-                    <p className="text-muted-foreground">{item.answer}</p>
-                  </CardContent>
-                </Card>
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn direction="up" delay={100}>
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="w-full space-y-4">
+                {faq.map((item, index) => (
+                  <AccordionItem key={index} value={`item-${index}`} className="border border-border/30 bg-card rounded-xl overflow-hidden">
+                    <AccordionTrigger className="text-lg font-semibold hover:no-underline hover:text-primary py-5 px-6 bg-background/50">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground text-base px-6 py-4 bg-muted/30 border-t border-border/20">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
