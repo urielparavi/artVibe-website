@@ -13,10 +13,10 @@ export const About = () => {
             <FadeIn direction="right" delay={200}>
               <div className="w-[300px] h-[300px] relative rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=600&fit=crop"
-                  alt="אמן מצייר"
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=600&fit=crop&crop=faces&facepad=3"
+                  alt="דוד כהן - אמן"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   sizes="300px"
                 />
               </div>

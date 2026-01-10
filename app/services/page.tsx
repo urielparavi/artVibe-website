@@ -132,14 +132,14 @@ export default function ServicesPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <FadeIn key={service.title} direction="up" delay={index * 100}>
-              <Card className="relative flex flex-col h-full">
+              <Card className="relative flex flex-col h-full overflow-hidden">
                 {service.popular && (
-                  <Badge className="absolute -top-3 right-4 bg-primary">
+                  <Badge className="absolute top-4 right-4 bg-primary z-10">
                     הכי פופולרי
                   </Badge>
                 )}
-                <CardHeader>
-                  <div className="mb-4 bg-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center">
+                <CardHeader className="text-center">
+                  <div className="mb-4 bg-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto">
                     {service.icon}
                   </div>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
