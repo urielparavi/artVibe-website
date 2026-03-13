@@ -147,7 +147,7 @@ const Work = () => {
       <SEO
         title="גלריה"
         description="גלריה מקוונת של יצירות מקוריות — ציורי שמן, אקוורל ופורטרטים. סנן לפי קטגוריה וגלה יצירות זמינות לרכישה."
-        url="https://davidcohen-art.co.il/work"
+        url="https://artvibe-website.netlify.app/work"
       />
       <Navigation />
 

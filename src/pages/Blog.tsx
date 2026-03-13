@@ -19,7 +19,7 @@ const Blog = () => {
       <SEO
         title="בלוג"
         description="מאמרים על ציור, טכניקות אמנות והשראה ישירות מהסטודיו — טיפים מקצועיים על ציורי שמן, אקוורל ופורטרטים."
-        url="https://davidcohen-art.co.il/blog"
+        url="https://artvibe-website.netlify.app/blog"
       />
       <Navigation />
 

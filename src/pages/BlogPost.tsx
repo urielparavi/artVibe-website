@@ -175,7 +175,7 @@ const BlogPost = () => {
         title={post.title}
         description={post.excerpt}
         image={post.image}
-        url={`https://davidcohen-art.co.il/blog/${post.id}`}
+        url={`https://artvibe-website.netlify.app/blog/${post.id}`}
         type="article"
       />
       <Navigation />

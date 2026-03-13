@@ -131,7 +131,7 @@ const AboutPage = () => {
       <SEO
         title="אודות"
         description="דוד כהן — אמן ישראלי מירושלים עם 15+ שנות ניסיון. 500+ יצירות מקוריות, 50+ תערוכות. ביוגרפיה, פילוסופיית ציור וציר הזמן."
-        url="https://davidcohen-art.co.il/about"
+        url="https://artvibe-website.netlify.app/about"
         image="https://images.unsplash.com/photo-1577375729152-4c8b5fcda381?w=1200&q=80"
       />
       <Navigation />

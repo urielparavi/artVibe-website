@@ -9,7 +9,7 @@ interface SEOProps {
 }
 
 const SITE_NAME = "דוד כהן — אמן";
-const BASE_URL = "https://davidcohen-art.co.il";
+const BASE_URL = "https://artvibe-website.netlify.app";
 const DEFAULT_IMAGE = `${BASE_URL}/images/og-image.jpg`;
 const DEFAULT_DESC = "דוד כהן — אמן ישראלי מוביל המתמחה בציורי שמן, אקוורל ופורטרטים. יצירות מקוריות בהזמנה אישית, גלריה מקוונת ושיעורי ציור בירושלים.";
 
