@@ -61,7 +61,7 @@ const ServicesPage = () => {
       <SEO
         title="שירותים"
         description="שירותי ציור בהזמנה — ציורי שמן, פורטרטים, אקוורל ונוף ישראלי. מחירים החל מ-₪1,200. שיעורי ציור בירושלים."
-        url="https://davidcohen-art.co.il/services"
+        url="https://artvibe-website.netlify.app/services"
       />
       <Navigation />
 

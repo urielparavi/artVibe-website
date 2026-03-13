@@ -35,7 +35,7 @@ const ContactPage = () => {
       <SEO
         title="צור קשר"
         description="צרו קשר עם דוד כהן — הזמינו ציור מקורי, שאלו על שיעורי ציור, או סתם דברו על אמנות. סטודיו בירושלים, זמין לכלל הארץ."
-        url="https://davidcohen-art.co.il/contact"
+        url="https://artvibe-website.netlify.app/contact"
       />
       <Navigation />
 
