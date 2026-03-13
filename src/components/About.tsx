@@ -1,13 +1,13 @@
 const mediums = [
-  { name: "שמן", tagline: "עשיר ועמוק", color: "#7C4F2A" },
-  { name: "אקוורל", tagline: "קל ואווירי", color: "#6B9EBC" },
-  { name: "פורטרט", tagline: "נשמה בצבע", color: "#D4A574" },
+  { name: 'שמן', tagline: 'עשיר ועמוק', color: '#7C4F2A' },
+  { name: 'אקוורל', tagline: 'קל ואווירי', color: '#6B9EBC' },
+  { name: 'פורטרט', tagline: 'נשמה בצבע', color: '#D4A574' },
 ];
 
 const About = () => {
   return (
     <section id="about" className="py-32 bg-muted/20 relative overflow-hidden">
-      {/* Subtle canvas texture */}
+      {/* Subtle - canvas texture */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <img
           src="/images/background-images/bg-services-hero.webp"
@@ -34,26 +34,38 @@ const About = () => {
                   "
                 </span>
                 <p className="text-lg text-muted-foreground leading-relaxed relative">
-                  אני מאמין שכל יצירת אמנות היא שיחה — בין האמן לצופה, בין הרגש לצורה.
-                  כבר למעלה מ-15 שנה אני יוצר ציורים שמדברים אל הנשמה, עם ידיים שמכירות
-                  כל מכחול ועיניים שרואות את היופי בפרטים הקטנים.
+                  אני מאמין שכל יצירת אמנות היא שיחה — בין האמן לצופה, בין הרגש
+                  לצורה. כבר למעלה מ-15 שנה אני יוצר ציורים שמדברים אל הנשמה, עם
+                  ידיים שמכירות כל מכחול ועיניים שרואות את היופי בפרטים הקטנים.
                 </p>
 
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  הסטודיו שלי בירושלים הוא מקום של יצירה, השראה ולמידה. עד היום יצרתי
-                  מעל 500 יצירות, עבדתי עם 200+ לקוחות מרוצים, והצגתי בגלריות ברחבי הארץ.
+                  הסטודיו שלי בירושלים הוא מקום של יצירה, השראה ולמידה. עד היום
+                  יצרתי מעל 500 יצירות, עבדתי עם 200+ לקוחות מרוצים, והצגתי
+                  בגלריות ברחבי הארץ.
                 </p>
               </div>
             </div>
 
             <div className="space-y-12">
               <div>
-                <h4 className="text-minimal text-muted-foreground mb-6">הגישה שלי</h4>
+                <h4 className="text-minimal text-muted-foreground mb-6">
+                  הגישה שלי
+                </h4>
                 <div className="space-y-4">
                   {[
-                    { title: "הקשבה", desc: "כל יצירה מתחילה בהבנה מעמיקה של הרצון והחזון של הלקוח" },
-                    { title: "מלאכת יד", desc: "כל פרט מצויר בקפידה עם חומרים איכותיים שנבחרו במיוחד" },
-                    { title: "רגש", desc: "מעבר לטכניקה — כל ציור נושא עמו סיפור ורגש אמיתי" },
+                    {
+                      title: 'הקשבה',
+                      desc: 'כל יצירה מתחילה בהבנה מעמיקה של הרצון והחזון של הלקוח',
+                    },
+                    {
+                      title: 'מלאכת יד',
+                      desc: 'כל פרט מצויר בקפידה עם חומרים איכותיים שנבחרו במיוחד',
+                    },
+                    {
+                      title: 'רגש',
+                      desc: 'מעבר לטכניקה — כל ציור נושא עמו סיפור ורגש אמיתי',
+                    },
                   ].map((item) => (
                     <div
                       key={item.title}
@@ -63,7 +75,9 @@ const About = () => {
                       <h5 className="text-lg font-medium mb-1 transition-colors duration-300 group-hover:text-[var(--gold)]">
                         {item.title}
                       </h5>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -72,9 +86,20 @@ const About = () => {
               <div className="pt-8 border-t border-border">
                 <div className="grid grid-cols-3 gap-8">
                   {mediums.map((m) => (
-                    <div key={m.name} className="pt-3 border-t-2" style={{ borderColor: m.color }}>
-                      <p className="text-lg font-light mb-1" style={{ color: m.color }}>{m.name}</p>
-                      <p className="text-xs text-muted-foreground">{m.tagline}</p>
+                    <div
+                      key={m.name}
+                      className="pt-3 border-t-2"
+                      style={{ borderColor: m.color }}
+                    >
+                      <p
+                        className="text-lg font-light mb-1"
+                        style={{ color: m.color }}
+                      >
+                        {m.name}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {m.tagline}
+                      </p>
                     </div>
                   ))}
                 </div>
