@@ -1,0 +1,8 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer diamond: gold fill -->
+  <polygon points="16,2 30,16 16,30 2,16" fill="#D4A574"/>
+  <!-- Inner diamond: dark contrast -->
+  <polygon points="16,9 23,16 16,23 9,16" fill="#7A4A1E"/>
+  <!-- Center highlight -->
+  <polygon points="16,13 19,16 16,19 13,16" fill="#E8C9A0"/>
+</svg>
