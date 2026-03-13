@@ -1,25 +1,24 @@
-import { Moon, Sun } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { useTheme } from "@/components/ThemeProvider"
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-  }
+  const isDark = theme === "dark"
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={toggleTheme}
-      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-      className="w-10 h-10 hover:bg-muted transition-colors duration-300"
+    <button
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+      className="flex items-center justify-center w-10 h-10 text-muted-foreground hover:text-[var(--gold)] transition-colors duration-300"
     >
-      <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      {/* Half-circle: filled half = current state (dark=right filled, light=left filled) */}
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.2" />
+        {isDark
+          ? <path d="M8 1.5a6.5 6.5 0 0 1 0 13V1.5z" fill="currentColor" />
+          : <path d="M8 1.5a6.5 6.5 0 0 0 0 13V1.5z" fill="currentColor" />
+        }
+      </svg>
       <span className="sr-only">Toggle theme</span>
-    </Button>
+    </button>
   )
 }

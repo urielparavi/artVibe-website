@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
       <Portfolio />
       <Testimonials />
       <Contact />
+      <Footer />
     </div>
   );
 };

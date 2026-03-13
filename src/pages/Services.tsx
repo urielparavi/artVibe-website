@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 
 const services = [
@@ -65,8 +66,17 @@ const ServicesPage = () => {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-background">
-        <div className="container mx-auto px-6">
+      <section className="pt-32 pb-20 bg-background relative overflow-hidden">
+        {/* Background painting */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <img
+            src="/images/background-images/bg-services-hero.webp"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-background/85 dark:bg-background/90" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="mb-20">
               <h1 className="text-minimal text-muted-foreground mb-4">שירותים</h1>
@@ -85,25 +95,49 @@ const ServicesPage = () => {
       <section className="pb-32 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-x-20 gap-y-16">
+            <div className="mb-16 flex items-end gap-6">
+              <div>
+                <h2 className="text-minimal text-muted-foreground mb-4">השירותים שלי</h2>
+                <h3 className="text-4xl font-light text-architectural">
+                  בחרו את השירות המתאים
+                </h3>
+              </div>
+              <div
+                className="hidden md:block h-px flex-1 mb-4"
+                style={{ background: 'linear-gradient(to left, transparent, var(--gold-light))' }}
+                aria-hidden="true"
+              />
+            </div>
+            <div className="grid md:grid-cols-2 gap-x-8 gap-y-8">
               {services.map((service, index) => (
-                <div key={index} className="group border-t border-border pt-10">
+                <div
+                  key={index}
+                  className="group border border-border p-10 transition-all duration-500 hover:border-[var(--gold)] hover:bg-[var(--gold)]/3"
+                >
                   <div className="flex items-start gap-6">
-                    <span className="text-minimal font-medium" style={{ color: 'var(--gold)' }}>
+                    <span
+                      className="text-minimal font-medium transition-all duration-500 group-hover:text-[var(--gold-light)]"
+                      style={{ color: 'var(--gold)' }}
+                    >
                       {service.number}
                     </span>
                     <div className="flex-1">
                       <div className="flex items-start justify-between gap-4 mb-4">
-                        <h3 className="text-2xl font-light text-architectural group-hover:text-muted-foreground transition-colors duration-500">
+                        <h3 className="text-2xl font-light text-architectural group-hover:text-[var(--gold)] transition-colors duration-500">
                           {service.title}
                         </h3>
                         {service.popular && (
-                          <span className="text-minimal px-3 py-1 shrink-0" style={{ backgroundColor: 'var(--gold)', color: '#000' }}>
+                          <span
+                            className="text-minimal px-3 py-1 shrink-0 border"
+                            style={{ borderColor: 'var(--gold)', color: 'var(--gold)' }}
+                          >
                             פופולרי
                           </span>
                         )}
                       </div>
-                      <p className="text-minimal mb-4" style={{ color: 'var(--gold)' }}>{service.price}</p>
+                      <p className="text-minimal mb-4 font-medium" style={{ color: 'var(--gold)' }}>
+                        {service.price}
+                      </p>
                       <p className="text-muted-foreground leading-relaxed mb-6">
                         {service.description}
                       </p>
@@ -123,24 +157,42 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-32 bg-muted/30">
+      {/* Process — with connecting line */}
+      <section className="py-32 bg-muted/30 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to left, transparent, var(--gold), transparent)' }} aria-hidden="true" />
+        <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to left, transparent, var(--gold), transparent)' }} aria-hidden="true" />
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="mb-20">
-              <h2 className="text-minimal text-muted-foreground mb-4">תהליך העבודה</h2>
-              <h3 className="text-4xl md:text-6xl font-light text-architectural">
-                איך זה עובד
-              </h3>
+            <div className="mb-20 flex items-end gap-6">
+              <div>
+                <h2 className="text-minimal text-muted-foreground mb-4">תהליך העבודה</h2>
+                <h3 className="text-4xl md:text-6xl font-light text-architectural">
+                  איך זה עובד
+                </h3>
+              </div>
+              <div
+                className="hidden md:block h-px flex-1 mb-4"
+                style={{ background: 'linear-gradient(to left, transparent, var(--gold-light))' }}
+                aria-hidden="true"
+              />
             </div>
-            <div className="grid md:grid-cols-4 gap-12">
+            <div className="grid md:grid-cols-4 gap-0 relative">
+              {/* Connecting line */}
+              <div
+                className="hidden md:block absolute top-6 right-[12.5%] left-[12.5%] h-px"
+                style={{ background: 'linear-gradient(to left, transparent, var(--gold-light), transparent)' }}
+              />
               {process.map((p, index) => (
-                <div key={index}>
-                  <div className="text-5xl font-light mb-6" style={{ color: 'var(--gold)' }}>
-                    {p.step}
+                <div key={index} className="relative px-6 pb-8">
+                  {/* Circle marker */}
+                  <div
+                    className="w-12 h-12 rounded-full border-2 flex items-center justify-center mb-6 bg-background relative z-10"
+                    style={{ borderColor: 'var(--gold)' }}
+                  >
+                    <span className="text-sm font-medium" style={{ color: 'var(--gold)' }}>{p.step}</span>
                   </div>
                   <h4 className="text-xl font-medium mb-3">{p.title}</h4>
-                  <p className="text-muted-foreground">{p.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{p.description}</p>
                 </div>
               ))}
             </div>
@@ -148,9 +200,22 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-32 bg-foreground text-background">
-        <div className="container mx-auto px-6">
+      {/* CTA — dark section with gold accent */}
+      <section className="py-32 bg-foreground text-background relative overflow-hidden">
+        {/* Background painting */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <img
+            src="/images/background-images/bg-services-cta.webp"
+            alt=""
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        {/* Subtle gold gradient decoration */}
+        <div
+          className="absolute inset-0 opacity-5 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 50% 100%, var(--gold) 0%, transparent 70%)' }}
+        />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-light text-architectural mb-8">
               מוכנים להזמין?
@@ -160,13 +225,14 @@ const ServicesPage = () => {
             </p>
             <a
               href="/contact"
-              className="inline-block text-minimal bg-background text-foreground px-10 py-4 hover:opacity-90 transition-opacity duration-300"
+              className="inline-block text-minimal bg-background text-foreground px-10 py-4 transition-all duration-500 btn-gold-glow hover:opacity-90 shimmer"
             >
               צרו קשר עכשיו
             </a>
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

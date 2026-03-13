@@ -37,10 +37,32 @@ const testimonials = [
   }
 ];
 
+const StarRating = () => (
+  <div className="flex gap-1 mb-4" aria-label="דירוג 5 כוכבים">
+    {[...Array(5)].map((_, i) => (
+      <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path
+          d="M7 1L8.545 5.18H13L9.455 7.82L10.99 12L7 9.36L3.01 12L4.545 7.82L1 5.18H5.455L7 1Z"
+          fill="var(--gold)"
+        />
+      </svg>
+    ))}
+  </div>
+);
+
 const Testimonials = () => {
   return (
-    <section className="py-32 bg-background overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-32 bg-background overflow-hidden relative">
+      {/* Background painting */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <img
+          src="/images/background-images/bg-testimonials.webp"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/82 dark:bg-background/88" />
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <h2 className="text-minimal text-muted-foreground mb-4">לקוחות מספרים</h2>
@@ -51,15 +73,38 @@ const Testimonials = () => {
 
           <div className="grid md:grid-cols-3 gap-12">
             {testimonials.map((t, index) => (
-              <div key={index} className="border-t border-border pt-10 space-y-6">
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  "{t.text}"
-                </p>
+              <div
+                key={index}
+                className="group relative border-t border-border pt-10 space-y-6 glass-card p-8 transition-all duration-500 hover:border-[var(--gold)] hover:shadow-elegant"
+                style={{ borderTop: '1px solid' }}
+              >
+                {/* Large decorative quote — background */}
+                <span
+                  className="absolute top-4 left-6 text-8xl font-serif leading-none pointer-events-none select-none opacity-[0.06] group-hover:opacity-[0.1] transition-opacity duration-500"
+                  style={{ color: 'var(--gold)', fontFamily: 'Georgia, serif' }}
+                  aria-hidden="true"
+                >
+                  "
+                </span>
+
+                <div className="relative">
+                  <StarRating />
+                  <p className="text-muted-foreground leading-relaxed text-lg">
+                    "{t.text}"
+                  </p>
+                </div>
+
+                {/* Gold separator */}
+                <div
+                  className="w-8 h-px transition-all duration-500 group-hover:w-16"
+                  style={{ backgroundColor: 'var(--gold)' }}
+                />
+
                 <div className="flex items-center gap-4">
                   <img
                     src={t.avatar}
                     alt={t.name}
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="w-12 h-12 rounded-full object-cover ring-1 ring-border group-hover:ring-[var(--gold)] transition-all duration-500"
                   />
                   <div>
                     <p className="font-medium text-foreground">{t.name}</p>

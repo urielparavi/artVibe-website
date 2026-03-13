@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import project1 from "@/assets/project-1.webp";
 import project2 from "@/assets/project-2.webp";
@@ -38,7 +39,7 @@ const artworks = [
     description: "פרחי בר של הגליל בצבעי מים עדינים — כלנית, רקפת ואירוס שניצתו לאחר הגשם"
   },
   {
-    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80",
+    image: "/images/tel-aviv-streets.webp",
     title: "רחובות תל אביב",
     technique: "שמן על קנבס",
     size: "90×70 ס\"מ",
@@ -48,7 +49,7 @@ const artworks = [
     description: "סצנת רחוב תל אביבית חיה — קפה על המדרכה, עצי פיקוס ואנרגיה ים תיכונית"
   },
   {
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    image: "/images/negev-landscape.webp",
     title: "נוף הנגב",
     technique: "אקוורל על נייר",
     size: "70×50 ס\"מ",
@@ -58,7 +59,7 @@ const artworks = [
     description: "מדבר הנגב בשעת דמדומים — שממת יופי שקטה בגוונים של אדמה, חרסית וכחול עמוק"
   },
   {
-    image: "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800&q=80",
+    image: "/images/abstract-storm.webp",
     title: "סערה אבסטרקטית",
     technique: "שמן על קנבס",
     size: "120×100 ס\"מ",
@@ -68,7 +69,7 @@ const artworks = [
     description: "יצירה אבסטרקטית בולטת — תנועה, אנרגיה ורגש מבוטאים דרך שכבות עבות של צבע"
   },
   {
-    image: "https://images.unsplash.com/photo-1531913223931-b0d3198229ee?w=800&q=80",
+    image: "/images/bugi-beach-haifa.webp",
     title: "ים בוגי, חיפה",
     technique: "שמן על קנבס",
     size: "80×60 ס\"מ",
@@ -78,7 +79,7 @@ const artworks = [
     description: "חוף ים בוגי בחיפה — גלים קטנים, אוויר מלוח ואור בוקר שמתנגן על פני הים"
   },
   {
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80",
+    image: "/images/white-roses.webp",
     title: "ורדים לבנים",
     technique: "אקוורל על נייר",
     size: "40×30 ס\"מ",
@@ -88,7 +89,7 @@ const artworks = [
     description: "ורדים לבנים בצנצנת זכוכית — אלגנטיות פשוטה שמדברת בשפת היופי השקט"
   },
   {
-    image: "https://images.unsplash.com/photo-1492037766660-2a56f9eb3fcb?w=800&q=80",
+    image: "/images/girl-with-book.webp",
     title: "ילדה עם ספר",
     technique: "שמן על קנבס",
     size: "70×90 ס\"מ",
@@ -98,7 +99,7 @@ const artworks = [
     description: "פורטרט ילדה שקועה בספר — רגע פרטי של דמיון וסקרנות, מלא חום ואהבה"
   },
   {
-    image: "https://images.unsplash.com/photo-1444427169197-de497742b62d?w=800&q=80",
+    image: "/images/jerusalem-of-gold.webp",
     title: "ירושלים של זהב",
     technique: "שמן על קנבס",
     size: "100×80 ס\"מ",
@@ -108,7 +109,7 @@ const artworks = [
     description: "חומות ירושלים העתיקה בשעות הזהב — אבנים שספגו אלפי שנות היסטוריה ואמונה"
   },
   {
-    image: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?w=800&q=80",
+    image: "/images/dance-of-colors.webp",
     title: "ריקוד צבעים",
     technique: "אקרילי על קנבס",
     size: "110×90 ס\"מ",
@@ -118,7 +119,7 @@ const artworks = [
     description: "יצירה חגיגית ועליזה — כתמי צבע שרוקדים יחד בהרמוניה ויוצרים מנגינה ויזואלית"
   },
   {
-    image: "https://images.unsplash.com/photo-1440186347098-386b7459ad6b?w=800&q=80",
+    image: "/images/machne-yehuda.webp",
     title: "שוק מחנה יהודה",
     technique: "שמן על קנבס",
     size: "90×70 ס\"מ",
@@ -151,8 +152,17 @@ const Work = () => {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-20">
-        <div className="container mx-auto px-6">
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        {/* Background painting */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <img
+            src="/images/background-images/bg-gallery-hero.webp"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-background/85 dark:bg-background/90" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
               <h1 className="text-6xl md:text-8xl font-light text-architectural mb-8">
@@ -167,37 +177,32 @@ const Work = () => {
       </section>
 
       {/* Filters */}
-      <section className="pb-16">
+      <section className="pt-10 pb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto space-y-6">
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-wrap gap-3">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`text-minimal transition-colors duration-300 relative group ${
+                  className={`text-minimal px-4 py-2 border rounded-sm transition-all duration-300 ${
                     activeCategory === cat
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "border-[var(--gold)] text-[var(--gold)] bg-[var(--gold)]/8"
+                      : "border-border text-muted-foreground hover:border-[var(--gold)] hover:text-foreground"
                   }`}
                 >
                   {cat}
-                  <span className={`absolute bottom-0 right-0 w-full h-px transition-transform duration-300 origin-right ${
-                    activeCategory === cat
-                      ? "scale-x-100"
-                      : "scale-x-0 group-hover:scale-x-100"
-                  }`} style={{ backgroundColor: 'var(--gold)' }}></span>
                 </button>
               ))}
             </div>
-            <label className="flex items-center gap-3 cursor-pointer">
+            <label className="flex items-center gap-3 cursor-pointer group">
               <input
                 type="checkbox"
                 checked={showAvailableOnly}
                 onChange={(e) => setShowAvailableOnly(e.target.checked)}
-                className="w-4 h-4"
+                className="w-4 h-4 accent-[var(--gold)]"
               />
-              <span className="text-minimal text-muted-foreground">הצג זמינות בלבד</span>
+              <span className="text-minimal text-muted-foreground group-hover:text-foreground transition-colors duration-300">הצג זמינות בלבד</span>
             </label>
           </div>
         </div>
@@ -209,7 +214,7 @@ const Work = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-16 lg:gap-20">
               {filtered.map((artwork, index) => (
-                <div key={index} className="group cursor-pointer">
+                <div key={index} className="group cursor-pointer flex flex-col">
                   <div className="relative overflow-hidden mb-8">
                     <img
                       src={artwork.image}
@@ -217,26 +222,40 @@ const Work = () => {
                       className="w-full h-[60vh] object-cover transition-transform duration-700 group-hover:scale-105"
                       style={{ objectPosition: artwork.objectPosition ?? "center" }}
                     />
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Rich gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    {/* Category Badge */}
-                    <div className="absolute top-6 right-6 backdrop-blur-sm px-4 py-2" style={{ backgroundColor: 'rgba(212,165,116,0.9)' }}>
-                      <span className="text-minimal text-black">
+                    {/* Revealed title on hover */}
+                    <div className="absolute bottom-0 right-0 left-0 p-6 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                      <p className="text-white font-light text-lg">{artwork.title}</p>
+                      <p className="text-minimal text-white/70">{artwork.technique}</p>
+                    </div>
+
+                    {/* Category Badge — with gold border */}
+                    <div
+                      className="absolute top-6 right-6 backdrop-blur-sm px-4 py-2 border"
+                      style={{
+                        backgroundColor: 'rgba(212,165,116,0.92)',
+                        borderColor: 'rgba(232,201,160,0.5)'
+                      }}
+                    >
+                      <span className="text-minimal text-black font-medium">
                         {artwork.category}
                       </span>
                     </div>
 
-                    {/* Available Badge */}
+                    {/* Available Badge — with pulse */}
                     {artwork.available && (
-                      <div className="absolute bottom-6 right-6 bg-background/90 backdrop-blur-sm px-3 py-1">
+                      <div className="absolute bottom-6 left-6 glass-card px-3 py-1 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full animate-pulse-gold" style={{ backgroundColor: 'var(--gold)' }} />
                         <span className="text-minimal text-foreground">זמין לרכישה</span>
                       </div>
                     )}
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="flex flex-col flex-1 gap-6">
                     <div>
-                      <h3 className="text-2xl lg:text-3xl font-light text-architectural mb-2 group-hover:text-muted-foreground transition-colors duration-500">
+                      <h3 className="text-2xl lg:text-3xl font-light text-architectural mb-2 group-hover:text-[var(--gold)] transition-colors duration-500">
                         {artwork.title}
                       </h3>
                       <p className="text-minimal text-muted-foreground">
@@ -248,14 +267,25 @@ const Work = () => {
                       {artwork.description}
                     </p>
 
-                    <div className="flex gap-8 pt-4 border-t border-border">
-                      <div>
-                        <p className="text-minimal text-muted-foreground mb-1">גודל</p>
-                        <p className="text-foreground">{artwork.size}</p>
-                      </div>
-                      <div>
-                        <p className="text-minimal text-muted-foreground mb-1">שנה</p>
-                        <p className="text-foreground">{artwork.year}</p>
+                    <div className="mt-auto pt-4 border-t border-border group-hover:border-[var(--gold)]/40 transition-colors duration-500">
+                      <div className="flex items-stretch gap-0">
+                        {/* Technique */}
+                        <div className="flex-1 py-3">
+                          <p className="text-minimal text-muted-foreground mb-1">טכניקה</p>
+                          <p className="text-minimal" style={{ color: 'var(--gold)' }}>{artwork.technique}</p>
+                        </div>
+                        <div className="w-px mx-5 self-stretch opacity-25 group-hover:opacity-50 transition-opacity duration-500" style={{ backgroundColor: 'var(--gold)' }} aria-hidden="true" />
+                        {/* Size */}
+                        <div className="flex-1 py-3">
+                          <p className="text-minimal text-muted-foreground mb-1">גודל</p>
+                          <p className="text-minimal text-foreground">{artwork.size}</p>
+                        </div>
+                        <div className="w-px mx-5 self-stretch opacity-25 group-hover:opacity-50 transition-opacity duration-500" style={{ backgroundColor: 'var(--gold)' }} aria-hidden="true" />
+                        {/* Year */}
+                        <div className="py-3">
+                          <p className="text-minimal text-muted-foreground mb-1">שנה</p>
+                          <p className="text-minimal text-foreground">{artwork.year}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -280,14 +310,14 @@ const Work = () => {
             </p>
             <a
               href="/contact"
-              className="inline-block text-minimal text-foreground hover:text-muted-foreground transition-colors duration-300 relative group"
+              className="inline-block text-minimal border border-foreground px-10 py-4 hover:bg-foreground hover:text-background transition-all duration-500 btn-gold-glow"
             >
               צרו קשר
-              <span className="absolute bottom-0 right-0 w-full h-px bg-foreground group-hover:bg-muted-foreground transition-colors duration-300"></span>
             </a>
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
