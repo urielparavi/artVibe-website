@@ -196,7 +196,7 @@ const AboutPage = () => {
                 <img
                   src={aboutArtist}
                   alt="דוד כהן בסטודיו"
-                  className="w-full h-[35vh] md:h-[70vh] object-cover object-top md:object-[center_55%] transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-[40vh] md:h-[70vh] object-cover object-top md:object-[center_55%] transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
