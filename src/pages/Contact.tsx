@@ -83,53 +83,6 @@ const ContactPage = () => {
               />
             </div>
             <div className="grid md:grid-cols-2 gap-20">
-              {/* Info */}
-              <div className="space-y-10">
-                <div className="grid grid-cols-2 gap-6">
-                  {[
-                    { label: "טלפון", content: <a href="tel:054-1234567" className="text-lg group-hover:text-[var(--gold)] transition-colors duration-300">054-1234567</a> },
-                    { label: "אימייל", content: <a href="mailto:david@artist.co.il" className="text-lg group-hover:text-[var(--gold)] transition-colors duration-300">david@artist.co.il</a> },
-                    { label: "סטודיו", content: <address className="text-lg not-italic">רחוב בצלאל 15<br />ירושלים</address> },
-                    { label: "שעות", content: <p className="text-lg">א׳–ה׳ 9:00–18:00</p> },
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="group glass-card border-r-4 p-6 transition-all duration-300 hover:bg-[var(--gold)]/4"
-                      style={{ borderRightColor: 'var(--gold)' }}
-                    >
-                      <h3 className="text-minimal text-muted-foreground mb-3">{item.label}</h3>
-                      {item.content}
-                    </div>
-                  ))}
-                </div>
-
-                <div>
-                  <h3 className="text-minimal text-muted-foreground mb-4">עקבו אחריי</h3>
-                  <div className="flex flex-wrap gap-3">
-                    <a
-                      href="#"
-                      className="group inline-flex items-center gap-2 px-5 py-2.5 border border-border text-minimal text-muted-foreground hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all duration-300"
-                    >
-                      <svg width="16" height="16" viewBox="0 0 18 18" fill="none" className="transition-colors duration-300">
-                        <rect x="1.5" y="1.5" width="15" height="15" rx="4" stroke="currentColor" strokeWidth="1.3"/>
-                        <circle cx="9" cy="9" r="3" stroke="currentColor" strokeWidth="1.3"/>
-                        <circle cx="13" cy="5" r="0.8" fill="currentColor"/>
-                      </svg>
-                      Instagram
-                    </a>
-                    <a
-                      href="#"
-                      className="group inline-flex items-center gap-2 px-5 py-2.5 border border-border text-minimal text-muted-foreground hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all duration-300"
-                    >
-                      <svg width="16" height="16" viewBox="0 0 18 18" fill="none" className="transition-colors duration-300">
-                        <path d="M17 9A8 8 0 1 0 9.5 17v-5.7H7.5V9h2V7.2c0-2 1.2-3.1 3-3.1.86 0 1.75.15 1.75.15V6.2h-1c-.97 0-1.28.6-1.28 1.22V9h2.2l-.35 2.3H11.97V17A8 8 0 0 0 17 9Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
-                      </svg>
-                      Facebook
-                    </a>
-                  </div>
-                </div>
-              </div>
-
               {/* Form */}
               <div className="glass-card p-8 md:p-10 border-t-2" style={{ borderTopColor: 'var(--gold)' }}>
                 {/* Form header */}
@@ -204,6 +157,54 @@ const ContactPage = () => {
                   </div>
                 </form>
               </div>
+
+              {/* Info */}
+              <div className="space-y-10">
+                <div className="grid grid-cols-2 gap-6">
+                  {[
+                    { label: "טלפון", content: <a href="tel:054-1234567" className="text-lg group-hover:text-[var(--gold)] transition-colors duration-300">054-1234567</a> },
+                    { label: "אימייל", content: <a href="mailto:david@artist.co.il" className="text-lg group-hover:text-[var(--gold)] transition-colors duration-300">david@artist.co.il</a> },
+                    { label: "סטודיו", content: <address className="text-lg not-italic">רחוב בצלאל 15<br />ירושלים</address> },
+                    { label: "שעות", content: <p className="text-lg">א׳–ה׳ 9:00–18:00</p> },
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="group glass-card border-r-4 p-6 transition-all duration-300 hover:bg-[var(--gold)]/4"
+                      style={{ borderRightColor: 'var(--gold)' }}
+                    >
+                      <h3 className="text-minimal text-muted-foreground mb-3">{item.label}</h3>
+                      {item.content}
+                    </div>
+                  ))}
+                </div>
+
+                <div>
+                  <h3 className="text-minimal text-muted-foreground mb-4">עקבו אחריי</h3>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href="#"
+                      className="group inline-flex items-center gap-2 px-5 py-2.5 border border-border text-minimal text-muted-foreground hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all duration-300"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 18 18" fill="none" className="transition-colors duration-300">
+                        <rect x="1.5" y="1.5" width="15" height="15" rx="4" stroke="currentColor" strokeWidth="1.3"/>
+                        <circle cx="9" cy="9" r="3" stroke="currentColor" strokeWidth="1.3"/>
+                        <circle cx="13" cy="5" r="0.8" fill="currentColor"/>
+                      </svg>
+                      Instagram
+                    </a>
+                    <a
+                      href="#"
+                      className="group inline-flex items-center gap-2 px-5 py-2.5 border border-border text-minimal text-muted-foreground hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all duration-300"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 18 18" fill="none" className="transition-colors duration-300">
+                        <path d="M17 9A8 8 0 1 0 9.5 17v-5.7H7.5V9h2V7.2c0-2 1.2-3.1 3-3.1.86 0 1.75.15 1.75.15V6.2h-1c-.97 0-1.28.6-1.28 1.22V9h2.2l-.35 2.3H11.97V17A8 8 0 0 0 17 9Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
+                      </svg>
+                      Facebook
+                    </a>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
